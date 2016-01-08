@@ -58,3 +58,9 @@ This method returns a `String`.
 
 * `npm i`
 * `npm test`
+
+## Releasing
+
+* Bump version number in `package.json` (semver please!)
+* `git tag version-<version number>`
+* `git push origin --tags`
