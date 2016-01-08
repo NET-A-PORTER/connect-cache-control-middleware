@@ -2,27 +2,30 @@
 
 module.exports = {
 	buildCacheControlHeader: function buildCacheControlHeader(cacheControl) {
-		var maxAge = cacheControl.maxAge;
-		var staleWhileRevalidate = cacheControl.staleWhileRevalidate;
+		var maxAge;
+		var staleWhileRevalidate;
+
+		if (!cacheControl) {
+			return 'no-cache, no-store, must-revalidate';
+		}
+
+		maxAge = cacheControl.maxAge;
+		staleWhileRevalidate = cacheControl.staleWhileRevalidate;
 
 		return 'max-age=' + maxAge + ', stale-while-revalidate=' + staleWhileRevalidate;
-	}
+	},
 
 	create: function create(cacheControl) {
-		var cacheControlHeader;
+		var cacheControlHeader = this.buildCacheControlHeader(cacheControl);
 
 		return function (req, res, next) {
 			if (!cacheControl) {
-				res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-				res.header('User-Cache-Control', 'no-cache, no-store, must-revalidate');
 				res.header('Pragma', 'no-cache');
 				res.header('Expires', '0');
-			} else {
-				cacheControlHeader = this.buildCacheHeader(cacheControl);
-
-				res.header('Cache-Control', cacheControlHeader);
-				res.header('User-Cache-Control', cacheControlHeader);
 			}
+
+			res.header('Cache-Control', cacheControlHeader);
+			res.header('User-Cache-Control', cacheControlHeader);
 
 			next();
 		};

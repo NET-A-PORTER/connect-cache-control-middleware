@@ -1,10 +1,10 @@
 {
-  "name": "mrp-cache-control-middleware",
+  "name": "connect-cache-control-middleware",
   "version": "1.0.0",
-  "description": "An Express middleware for consistently setting Cache-Control headers across MR PORTER sites",
+  "description": "A Connect/Express middleware for setting max-age and stale-while-revalidate Cache-Control headers",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test/*-tests.js"
   },
   "repository": {
     "type": "git",
@@ -14,11 +14,14 @@
     "mrporter",
     "cache.cache-control",
     "middleware",
+    "connect",
     "express"
   ],
   "author": "James Wright <james.wright@net-a-porter.com>",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^2.3.4"
+    "chai": "3.4.1",
+    "mocha": "2.3.4",
+    "sinon": "1.17.2"
   }
 }

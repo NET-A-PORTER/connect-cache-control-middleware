@@ -1,17 +1,17 @@
-# MR PORTER Cache Control Middleware
+# Connect Cache Control Middleware
 
-An Express middleware for consistently setting Cache-Control headers
+A Connect/Express middleware for consistently setting Cache-Control headers
 
 
 ## Installing
 
-`npm i --save mrp-cache-control-middleware`
+`npm i --save connect-cache-control-middleware`
 
 
 ## Usage
 
 ```
-var cacheControlMiddleware = require('mrp-cache-control-middleware');
+var cacheControlMiddleware = require('connect-cache-control-middleware');
 
 // creates a middleware instance that prevents caching
 var preventCaching = cacheControlMiddleware.create();
@@ -31,7 +31,7 @@ app.use(allowCaching);
 
 ### `cacheControlMiddleware.create([cacheControlConfig])`
 
-Returns a new instance of the middleware handler which can be passed to Express.
+Returns a new instance of the middleware handler which can be passed to Connect.
 
 If `cacheControlConfig` is omitted, then the middleware sets the following headers on each request:
 
@@ -47,7 +47,7 @@ Otherwise, it will set `Cache-Control` and `User-Cache-Control` to:
 
 ### `cacheControlMiddleware.buildCacheControlHeader(cacheControlConfig)`
 
-A helper function, used internally, to consistently build `Cache-Control` headers. This is exposed publicly if one requires to set headers outside of Express' middleware chain e.g. `express-remote-handlebars`.
+A helper function, used internally, to consistently build `Cache-Control` headers. This is exposed publicly if one requires to set headers outside of the middleware chain e.g. `express-remote-handlebars`.
 
 As with the `create` method, `cacheControlConfig` should be an object exposing respective `maxAge` and `staleWhileRevalidate` properties.
 
