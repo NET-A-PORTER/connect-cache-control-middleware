@@ -62,5 +62,5 @@ This method returns a `String`.
 ## Releasing
 
 * Bump version number in `package.json` (semver please!)
-* `git tag version-<version number>`
+* `git tag release-<version number>`
 * `git push origin --tags`
