@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "mrp-cache-control-middleware"
+    "url": "ssh://git@stash.vm.wtf.nap:7999/mrp/mrp-cache-control-middleware.git"
   },
   "keywords": [
     "mrporter",
