@@ -1,6 +1,6 @@
 # Connect Cache Control Middleware
 
-![Build status](https://circleci.com/gh/:owner/:repo.png?circle-token=:circle-token) [![npm](https://badge.fury.io/js/connect-cache-control-middleware.svg)](https://www.npmjs.com/package/connect-cache-control-middleware)
+![Build status](https://circleci.com/gh/NET-A-PORTER/connect-cache-control-middleware.png) [![npm](https://badge.fury.io/js/connect-cache-control-middleware.svg)](https://www.npmjs.com/package/connect-cache-control-middleware)
 
 A Connect/Express middleware for consistently setting Cache-Control headers
 
