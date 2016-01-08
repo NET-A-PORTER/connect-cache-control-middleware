@@ -3,9 +3,9 @@
 module.exports = {
 	buildCacheControlHeader: function buildCacheControlHeader(cacheControl) {
 		var maxAge = cacheControl.maxAge;
-		var staleWhileInvalidate = cacheControl.staleWhileInvalidate;
+		var staleWhileRevalidate = cacheControl.staleWhileRevalidate;
 
-		return 'max-age=' + maxAge + ', stale-while-invalidate=' + staleWhileInvalidate;
+		return 'max-age=' + maxAge + ', stale-while-revalidate=' + staleWhileRevalidate;
 	}
 
 	create: function create(cacheControl) {

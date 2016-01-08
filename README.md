@@ -43,13 +43,13 @@ If `cacheControlConfig` is omitted, then the middleware sets the following heade
 Otherwise, it will set `Cache-Control` and `User-Cache-Control` to:
 	
 * `max-age=<cacheControlConfig.maxAge>`
-* `stale-while-invalidate=<cacheControlConfig.staleWhileInvalidate>`
+* `stale-while-revalidate=<cacheControlConfig.staleWhileRevalidate>`
 
 ### `cacheControlMiddleware.buildCacheControlHeader(cacheControlConfig)`
 
 A helper function, used internally, to consistently build `Cache-Control` headers. This is exposed publicly if one requires to set headers outside of Express' middleware chain e.g. `express-remote-handlebars`.
 
-As with the `create` method, `cacheControlConfig` should be an object exposing respective `maxAge` and `staleWhileInvalidate` properties.
+As with the `create` method, `cacheControlConfig` should be an object exposing respective `maxAge` and `staleWhileRevalidate` properties.
 
 This method returns a `String`.
 
