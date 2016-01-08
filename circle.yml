@@ -10,5 +10,7 @@ test:
 deployment:
   production:
     tag: /release-.*/
+    branches:
+      ignore: *
     commands:
       - npm publish ./
